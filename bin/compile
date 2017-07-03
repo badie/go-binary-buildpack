@@ -96,6 +96,12 @@ fi
 
 eval "$(setupGOPATH ${GO_INSTALL_PACKAGE_SPEC})"
 
+if [[ -z "$GO_INSTALL_PACKAGE_MAIN" ]]; then
+    GO_INSTALL_PACKAGE_MAIN="main.go"
+fi
+
+step "will build binary ${src}/${GO_INSTALL_PACKAGE_MAIN}"
+
 # Build main binary and add to Procfile.
-go build ${src}/main.go
-echo -e "web: ./main" > ${build}/Procfile
+go build ${src}/${GO_INSTALL_PACKAGE_MAIN}
+echo -e "web: ./main ${GO_INSTALL_PACKAGE_SPEC_CMD_FLAGS}" > ${build}/Procfile

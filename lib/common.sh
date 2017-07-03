@@ -80,6 +80,8 @@ loadEnvDir() {
     envFlags+=("GO15VENDOREXPERIMENT")
     envFlags+=("GOVERSION")
     envFlags+=("GO_INSTALL_PACKAGE_SPEC")
+    envFlags+=("GO_INSTALL_PACKAGE_SPEC_CMD_FLAGS")
+    envFlags+=("GO_INSTALL_PACKAGE_MAIN")
     envFlags+=("GO_INSTALL_TOOLS_IN_IMAGE")
     envFlags+=("GO_SETUP_GOPATH_IN_IMAGE")
     envFlags+=("GO_TEST_SKIP_BENCHMARK")
